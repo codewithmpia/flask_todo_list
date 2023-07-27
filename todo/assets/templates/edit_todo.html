@@ -1,0 +1,25 @@
+<form 
+    class="mt-5"
+    hx-post="{{ url_for("edit_todo", todo_id=task.id) }}"
+    hx-target="body"
+    hx-push-url="true"
+    hx-replace-url="true"
+>
+    <div class="mb-3">
+        <input type="text" name="name" id="name" class="form-control fs-5 p-2" value="{{ task.name }}" required>
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Modifier</button>
+        <button 
+            class="btn btn-secondary"
+            hx-trigger="click"
+            hx-get="{{ url_for('todo_list') }}"
+            hx-target="body"
+            hx-push-url="true"
+            hx-replace-url="true"
+        >
+            Annuler
+        </button>
+    </div>
+</form>
+

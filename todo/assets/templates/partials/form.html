@@ -1,0 +1,12 @@
+<form 
+    class="mt-5"
+    hx-post="{{ url_for('create_todo') }}"
+    hx-target="body"
+>
+    <div class="mb-3">
+        <input type="text" name="name" id="name" class="form-control fs-5 p-2" placeholder="Saisir la tâche ici..." required>
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">+ Ajouter</button>
+    </div>
+</form>

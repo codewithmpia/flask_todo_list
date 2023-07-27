@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+    {{ bootstrap.load_css() }}
+</head>
+<body class="vh-100 d-flex align-items-center fs-5">
+    {% block main %}
+    {% endblock main %}
+
+    {{ bootstrap.load_js() }}
+    <script src="{{ url_for('static', filename='js/htmx.js') }}"></script>
+</body>
+</html>

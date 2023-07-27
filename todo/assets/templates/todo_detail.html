@@ -1,0 +1,20 @@
+{% from "bootstrap5/utils.html" import render_icon %}
+
+<div id="contents" class="my-5">
+    <div
+        class="d-flex justify-content-between rounded py-2 px-3"
+        style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"
+    >
+        <span>{{ task.name }}</span>
+        <span>{{ task.date.strftime("%d/%m/%Y") }}</span>
+    </div>
+    <button 
+        class="btn btn-primary my-3"
+        hx-get="{{ url_for('todo_list') }}"
+        hx-target="body"
+        hx-push-url="true"
+        hx-replace-url="true"
+    >
+        {{ render_icon("arrow-left") }}
+    </button>
+</div>
