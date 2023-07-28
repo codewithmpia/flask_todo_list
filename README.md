@@ -18,7 +18,7 @@ pip3 install -r requirements.txt
 
 Voici les captures d'écran de l'application:
 
-<div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
+<div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(70px,1fr));
 gap: 10px;
 grid-auto-flow: dense;">
 
