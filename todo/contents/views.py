@@ -7,6 +7,14 @@ from .models import Task
 @app.route("/", methods=("GET", "POST"))
 def todo_list():
     tasks = Task.query.order_by(Task.date.desc())
+    page = request.args.get("page")
+
+    if page and page.isdigit():
+        page = int(page)
+    else:
+        page = 1
+
+    tasks = tasks.paginate(page=page, per_page=10)
     return render_template("index.html", tasks=tasks)
 
 # Show detail of task

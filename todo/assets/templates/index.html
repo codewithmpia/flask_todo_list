@@ -2,9 +2,10 @@
 {% from "bootstrap5/form.html" import render_form %}
 {% from "bootstrap5/utils.html" import render_icon %}
 {% from "bootstrap5/utils.html" import render_messages %}
+{% from "bootstrap5/pagination.html" import render_pagination %}
 
 {% block main %}
-    <div class="container rounded p-3" style="max-width: 700px;">
+    <div class="container rounded p-3" style="max-width: 700px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
         <div class="text-center">
             <h1 class="display-5 fw-bold text-primary">
                 Gestion de tâches
@@ -22,5 +23,9 @@
         <div id="contents" class="my-5">
             {% include "partials/todo_list.html" %}
         </div>
+
+        {% if tasks.total > 10 %}
+            {{ render_pagination(tasks) }}
+        {% endif %}
     </div>
 {% endblock main %}
